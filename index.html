@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divina Guarany | Beleza & Cosméticos</title>
+  <meta name="description" content="Divina Guarany em São Vicente. Cabelo, unhas, cílios, estética, Photon Laser e Ozonioterapia Capilar. Agende seu horário pelo WhatsApp." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fff8fb;
+      --bg2:#fff1f7;
+      --white:#ffffff;
+      --text:#2f2430;
+      --muted:#786875;
+      --dark:#241923;
+      --pink:#ff5fa2;
+      --pink2:#ff8eb9;
+      --gold:#ffd56f;
+      --gold2:#ffc356;
+      --line:rgba(47,36,48,.10);
+      --shadow:0 18px 50px rgba(109, 55, 95, .14);
+      --shadow-soft:0 10px 28px rgba(109, 55, 95, .08);
+      --wa:#25d366;
+      --wa2:#149e35;
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,95,162,.10), transparent 25%),
+        radial-gradient(circle at 90% 0%, rgba(255,213,111,.15), transparent 26%),
+        linear-gradient(180deg,#fffafc 0%,#fff6fa 100%);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img,video{display:block;max-width:100%}
+    .container{width:min(1120px, calc(100% - 24px));margin:0 auto}
+    .section{padding:60px 0}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:999px;
+      background:rgba(255,95,162,.10);
+      color:#aa527f;
+      font-size:12px;font-weight:900;
+      text-transform:uppercase;letter-spacing:.08em;
+    }
+    .section-top{
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      gap:12px;margin-bottom:26px;
+    }
+    .section-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(30px,5vw,50px);
+      line-height:1;
+      color:var(--dark);
+    }
+    .section-title span{color:var(--pink)}
+    .section-sub{
+      max-width:760px;
+      font-size:15px;line-height:1.8;color:var(--muted);
+    }
+
+    .btn{
+      border:none;cursor:pointer;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:14px;
+      text-transform:uppercase;
+      transition:.22s ease;
+      white-space:nowrap;
+      position:relative;
+      overflow:hidden;
+    }
+    .btn::before{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,.26), transparent);
+      transform:translateX(-120%);
+      transition:.5s ease;
+    }
+    .btn:hover{transform:translateY(-2px) scale(1.01)}
+    .btn:hover::before{transform:translateX(120%)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--pink),var(--pink2),var(--gold));
+      color:white;
+      box-shadow:0 14px 30px rgba(255,95,162,.28);
+    }
+    .btn-dark{
+      background:var(--dark);
+      color:white;
+      box-shadow:0 14px 30px rgba(36,25,35,.18);
+    }
+    .btn-wa{
+      background:linear-gradient(135deg,var(--wa),var(--wa2));
+      color:white;
+      box-shadow:0 14px 30px rgba(37,211,102,.26);
+    }
+    .btn-soft{
+      background:white;
+      color:var(--dark);
+      border:1px solid rgba(47,36,48,.08);
+      box-shadow:var(--shadow-soft);
+    }
+
+    /* HEADER */
+    .header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,249,252,.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(47,36,48,.08);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+    }
+    .brand-logo-wrap{
+      position:relative;
+      width:62px;height:62px;border-radius:50%;
+      padding:3px;
+      background:linear-gradient(135deg,var(--pink),var(--gold));
+      box-shadow:0 16px 34px rgba(255,95,162,.24);
+      animation:floatLogo 3s ease-in-out infinite;
+    }
+    .brand-logo-wrap::before{
+      content:"";
+      position:absolute;inset:-6px;border-radius:50%;
+      background:conic-gradient(from 0deg, rgba(255,95,162,.0), rgba(255,95,162,.5), rgba(255,213,111,.0), rgba(255,95,162,.0));
+      animation:spin 6s linear infinite;
+      z-index:-1;
+      filter:blur(2px);
+    }
+    .brand-logo{
+      width:100%;height:100%;border-radius:50%;
+      object-fit:cover;background:white;
+      border:2px solid rgba(255,255,255,.8);
+    }
+    .brand-text{display:grid;gap:2px;line-height:1}
+    .brand-text strong{
+      font-size:20px;color:var(--dark);letter-spacing:-.5px;
+    }
+    .brand-text small{
+      font-size:10px;font-weight:900;color:#aa5b81;
+      text-transform:uppercase;letter-spacing:.12em;
+    }
+
+    .menu{
+      display:flex;align-items:center;gap:20px;
+      font-size:14px;font-weight:800;color:#756472;
+    }
+    .menu a{transition:.2s ease}
+    .menu a:hover{color:var(--pink)}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .mobile-toggle{
+      display:none;
+      width:44px;height:44px;border:none;border-radius:14px;
+      background:white;color:var(--dark);
+      font-size:22px;font-weight:900;
+      box-shadow:var(--shadow-soft);
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{padding:34px 0 26px;position:relative;overflow:hidden}
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(255,95,162,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,95,162,.045) 1px, transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 92%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      position:relative;z-index:1;
+      display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:center;
+    }
+    .hero-left{display:grid;gap:18px}
+    .hero-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(40px,7vw,72px);
+      line-height:.92;letter-spacing:-1.5px;
+      color:var(--dark);
+    }
+    .hero-title span{
+      background:linear-gradient(135deg,var(--pink),#e75fa5,var(--gold));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero-copy{
+      font-size:16px;line-height:1.85;color:var(--muted);max-width:630px;
+    }
+    .hero-list{display:grid;gap:10px}
+    .hero-list li{
+      list-style:none;display:flex;gap:10px;align-items:flex-start;
+      font-size:15px;font-weight:700;
+    }
+    .hero-list li::before{
+      content:"✓";
+      width:22px;height:22px;flex:0 0 22px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,95,162,.12);
+      color:var(--pink);font-size:12px;font-weight:900;
+      margin-top:1px;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+    .hero-card{
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.88), rgba(255,246,251,.92)),
+        linear-gradient(135deg, rgba(255,95,162,.12), rgba(255,213,111,.12));
+      border:1px solid rgba(255,95,162,.10);
+      box-shadow:var(--shadow);
+      border-radius:30px;
+      padding:22px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;top:-80px;right:-70px;
+      width:250px;height:250px;border-radius:50%;
+      background:radial-gradient(circle, rgba(255,95,162,.20), transparent 62%);
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;left:-60px;bottom:-80px;
+      width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle, rgba(255,213,111,.20), transparent 62%);
+    }
+    .hero-card-inner{position:relative;z-index:1;display:grid;gap:16px}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;width:max-content;
+      padding:9px 12px;border-radius:999px;
+      background:white;border:1px solid rgba(255,95,162,.10);
+      box-shadow:var(--shadow-soft);
+      color:#aa527f;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;
+    }
+    .pulse{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--pink);
+      box-shadow:0 0 0 0 rgba(255,95,162,.65);
+      animation:pulse 1.5s infinite;
+    }
+    .hero-service-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+    }
+    .mini-card{
+      background:white;border-radius:18px;padding:16px;
+      border:1px solid rgba(47,36,48,.06);
+      box-shadow:var(--shadow-soft);
+      display:grid;gap:8px;transition:.2s ease;
+    }
+    .mini-card:hover{transform:translateY(-3px)}
+    .mini-icon{
+      width:44px;height:44px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,#ff90ba,#ffd47b);
+      color:#6c3856;font-size:18px;font-weight:900;
+      box-shadow:0 10px 18px rgba(255,95,162,.18);
+    }
+    .mini-card strong{font-size:15px;color:var(--dark)}
+    .mini-card span{font-size:13px;color:var(--muted);line-height:1.55}
+
+    .contact-glass{
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(255,95,162,.10);
+      box-shadow:var(--shadow-soft);
+      border-radius:22px;
+      padding:18px;
+      display:grid;gap:10px;
+    }
+    .contact-glass p{font-size:14px;line-height:1.7;color:var(--muted)}
+    .contact-glass strong{color:var(--dark)}
+
+    /* PROFESSIONALS BELOW HERO */
+    .pro-section-top{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:18px;
+    }
+    .pro-heading{display:grid;gap:10px}
+    .pro-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(28px,5vw,42px);
+      color:var(--dark);line-height:1;
+    }
+    .pro-title span{color:var(--pink)}
+    .pro-desc{font-size:14px;line-height:1.8;color:var(--muted);max-width:720px}
+    .slider-buttons{display:flex;gap:10px}
+    .slider-btn{
+      width:42px;height:42px;border:none;border-radius:50%;
+      background:white;box-shadow:var(--shadow-soft);
+      cursor:pointer;color:var(--dark);font-size:20px;font-weight:900;
+    }
+
+    .slider{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:calc((100% - 36px) / 3);
+      gap:18px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      padding:4px 2px 12px;
+      scrollbar-width:thin;
+    }
+
+    .pro-card{
+      scroll-snap-align:start;
+      background:white;
+      border-radius:24px;
+      border:1px solid rgba(47,36,48,.06);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      display:grid;
+      min-height:100%;
+    }
+    .pro-photo{
+      position:relative;
+      height:260px;
+      overflow:hidden;
+    }
+    .pro-photo img{width:100%;height:100%;object-fit:cover}
+    .reco-badge{
+      position:absolute;top:14px;left:14px;
+      padding:9px 12px;border-radius:999px;
+      background:rgba(36,25,35,.78);
+      color:white;font-size:11px;font-weight:900;
+      text-transform:uppercase;letter-spacing:.07em;
+      backdrop-filter:blur(8px);
+    }
+    .pro-body{padding:18px;display:grid;gap:10px}
+    .pro-role{
+      display:inline-flex;width:max-content;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(255,95,162,.10);
+      color:#aa527f;font-size:12px;font-weight:900;
+      text-transform:uppercase;letter-spacing:.08em;
+    }
+    .pro-body h3{
+      font-family:"Playfair Display",serif;
+      font-size:26px;line-height:1;color:var(--dark);
+    }
+    .pro-body p{
+      color:var(--muted);font-size:14px;line-height:1.75;
+    }
+    .pro-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+
+    /* quick services */
+    .quick-cards{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;
+    }
+    .quick-card{
+      background:white;border:1px solid rgba(47,36,48,.06);
+      border-radius:20px;padding:18px;
+      box-shadow:var(--shadow-soft);
+      display:grid;gap:8px;text-align:center;
+    }
+    .icon-bubble{
+      width:52px;height:52px;border-radius:50%;
+      margin:0 auto;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,#ff8fb9,#ffd377);
+      color:#5f3550;font-size:22px;font-weight:900;
+    }
+    .quick-card strong{font-size:15px;color:var(--dark)}
+    .quick-card span{font-size:13px;color:var(--muted);line-height:1.55}
+
+    /* gallery */
+    .gallery-block{display:grid;gap:16px}
+    .gallery-header{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+    }
+    .gallery-title{
+      font-size:24px;font-family:"Playfair Display",serif;color:var(--dark);
+    }
+    .gallery-title span{color:var(--pink)}
+    .gallery-note{font-size:14px;line-height:1.7;color:var(--muted);max-width:700px}
+    .gallery-slider{
+      display:grid;grid-auto-flow:column;
+      gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;padding:4px 2px 12px;
+      scrollbar-width:thin;
+    }
+    .gallery-slider.cols-4{grid-auto-columns:calc((100% - 42px) / 4)}
+    .gallery-slider.cols-3{grid-auto-columns:calc((100% - 28px) / 3)}
+    .slide{
+      scroll-snap-align:start;
+      position:relative;overflow:hidden;
+      border-radius:22px;
+      background:white;border:1px solid rgba(47,36,48,.06);
+      box-shadow:var(--shadow-soft);
+      min-height:320px;
+    }
+    .slide img{
+      width:100%;height:320px;object-fit:cover;
+      transition:transform .4s ease;
+    }
+    .slide:hover img{transform:scale(1.04)}
+    .slide-caption{
+      position:absolute;left:12px;right:12px;bottom:12px;
+      background:rgba(36,25,35,.70);
+      color:white;backdrop-filter:blur(8px);
+      border-radius:16px;padding:10px 12px;
+      font-size:13px;font-weight:800;line-height:1.5;
+    }
+
+    /* videos */
+    .video-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;
+    }
+    .video-card{
+      background:white;border-radius:26px;overflow:hidden;
+      border:1px solid rgba(47,36,48,.06);
+      box-shadow:var(--shadow);
+      display:grid;
+    }
+    .video-card video{
+      width:100%;aspect-ratio:9/16;object-fit:cover;background:#f5e6ee;
+    }
+    .video-content{padding:20px;display:grid;gap:12px}
+    .video-content h3{
+      font-family:"Playfair Display",serif;
+      font-size:26px;line-height:1;color:var(--dark);
+    }
+    .video-content h3 span{color:var(--pink)}
+    .video-content p{font-size:14px;line-height:1.75;color:var(--muted)}
+    .bullet-list{display:grid;gap:8px}
+    .bullet-list li{
+      list-style:none;display:flex;gap:8px;
+      font-size:14px;line-height:1.65;color:var(--text);font-weight:700;
+    }
+    .bullet-list li::before{
+      content:"•";font-size:22px;line-height:1;color:var(--pink);margin-top:-4px;
+    }
+
+    /* info cards */
+    .info-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;
+    }
+    .info-card{
+      background:white;border:1px solid rgba(47,36,48,.06);
+      border-radius:24px;padding:24px;
+      box-shadow:var(--shadow-soft);
+      display:grid;gap:14px;
+    }
+    .info-card h3{
+      font-family:"Playfair Display",serif;
+      font-size:30px;line-height:1;color:var(--dark);
+    }
+    .info-card h3 span{color:var(--pink)}
+    .info-card p{font-size:14px;line-height:1.8;color:var(--muted)}
+    .info-list{display:grid;gap:10px}
+    .info-list li{
+      list-style:none;display:flex;gap:10px;align-items:flex-start;
+      font-size:14px;font-weight:700;color:var(--text);
+    }
+    .info-list li::before{content:"✦";color:var(--pink);font-weight:900;margin-top:1px}
+
+    /* form */
+    .cta-box{
+      background:
+        linear-gradient(135deg, rgba(255,95,162,.08), rgba(255,213,111,.14)),
+        white;
+      border:1px solid rgba(255,95,162,.10);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:24px;
+      display:grid;gap:18px;
+    }
+    .cta-box h3{
+      font-family:"Playfair Display",serif;
+      font-size:34px;line-height:1;text-align:center;color:var(--dark);
+    }
+    .cta-box h3 span{color:var(--pink)}
+    .cta-box p{
+      text-align:center;font-size:14px;line-height:1.75;color:var(--muted);
+      max-width:720px;margin:0 auto;
+    }
+    .form-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;
+    }
+    .full{grid-column:1/-1}
+    input,select,textarea{
+      width:100%;border:none;outline:none;
+      min-height:50px;padding:0 16px;
+      background:white;border:1px solid rgba(47,36,48,.10);
+      border-radius:16px;font-family:inherit;font-size:14px;color:var(--text);
+      box-shadow:0 6px 18px rgba(87,41,78,.04);
+    }
+    textarea{padding:14px 16px;min-height:110px;resize:vertical}
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(255,95,162,.40);
+      box-shadow:0 0 0 4px rgba(255,95,162,.12);
+    }
+
+    /* footer */
+    .footer{padding:42px 0 88px}
+    .footer-grid{
+      display:grid;grid-template-columns:1.1fr .9fr .9fr;
+      gap:22px;padding-top:24px;
+      border-top:1px solid rgba(47,36,48,.08);
+    }
+    .footer-box h4{
+      font-size:18px;font-weight:900;color:var(--dark);margin-bottom:10px;
+    }
+    .footer-box p,.footer-box li,.footer-box a{
+      font-size:14px;line-height:1.8;color:var(--muted);
+    }
+    .footer-box ul{display:grid;gap:6px;list-style:none}
+    .footer-bottom{
+      padding-top:20px;margin-top:18px;
+      border-top:1px solid rgba(47,36,48,.08);
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      color:var(--muted);font-size:13px;
+    }
+
+    /* float */
+    .whatsapp-float{
+      position:fixed;right:16px;bottom:16px;z-index:120;
+      width:58px;height:58px;border-radius:50%;
+      background:linear-gradient(135deg,var(--wa),var(--wa2));
+      display:flex;align-items:center;justify-content:center;
+      color:white;box-shadow:0 18px 34px rgba(37,211,102,.35);
+      animation:floatBtn 2.8s ease-in-out infinite;
+    }
+    .whatsapp-float svg{width:30px;height:30px}
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes pulse{
+      70%{box-shadow:0 0 0 12px rgba(255,95,162,0)}
+      100%{box-shadow:0 0 0 0 rgba(255,95,162,0)}
+    }
+    @keyframes floatLogo{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-3px)}
+    }
+    @keyframes floatBtn{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-5px)}
+    }
+
+    @media (max-width: 980px){
+      .menu{
+        position:absolute;top:78px;left:12px;right:12px;
+        background:white;border-radius:20px;box-shadow:var(--shadow);
+        padding:16px;display:none;flex-direction:column;align-items:flex-start;
+      }
+      .menu.open{display:flex}
+      .mobile-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .hero-grid,.video-grid,.info-grid,.footer-grid{grid-template-columns:1fr}
+      .quick-cards{grid-template-columns:repeat(2,1fr)}
+      .slider{grid-auto-columns:calc((100% - 18px)/2)}
+    }
+
+    @media (max-width: 760px){
+      .hero{padding-top:20px}
+      .hero-service-grid{grid-template-columns:1fr 1fr}
+      .quick-cards{grid-template-columns:1fr 1fr}
+      .slider{grid-auto-columns:88%}
+      .gallery-slider.cols-4,.gallery-slider.cols-3{grid-auto-columns:88%}
+      .form-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 520px){
+      .brand-logo-wrap{width:54px;height:54px}
+      .brand-text strong{font-size:18px}
+      .brand-text small{font-size:9px}
+      .hero-title{font-size:44px}
+      .hero-copy{font-size:15px}
+      .hero-service-grid{grid-template-columns:1fr 1fr}
+      .quick-cards{grid-template-columns:1fr 1fr}
+      .slide,.slide img{min-height:290px;height:290px}
+      .footer-bottom{display:grid}
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    COLOQUE ESTES ARQUIVOS NA PASTA assets
+
+    logo-divina.jpg
+
+    cabelo-1.jpg
+    cabelo-2.jpg
+    cabelo-3.jpg
+    cabelo-4.jpg
+    cabelo-5.jpg
+    cabelo-6.jpg
+    cabelo-7.jpg
+    cabelo-8.jpg
+
+    unhas-1.jpg
+    unhas-2.jpg
+
+    cilios-1.jpg
+    cilios-2.jpg
+
+    video-photon.mp4
+    video-ozonio.mp4
+
+    profissional-caroline.jpg
+    profissional-tatiane.jpg
+    profissional-nicolly.jpg
+    profissional-nathaly.jpg
+  -->
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#topo" class="brand" aria-label="Divina Guarany">
+        <div class="brand-logo-wrap">
+          <img src="assets/logo-divina.jpg" alt="Logo Divina Guarany" class="brand-logo">
+        </div>
+        <div class="brand-text">
+          <strong>Divina Guarany</strong>
+          <small>Beleza & Cosméticos</small>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <nav class="menu" id="menu">
+          <a href="#topo">Início</a>
+          <a href="#profissionais">Profissionais</a>
+          <a href="#cabelo">Cabelo</a>
+          <a href="#unhas">Unhas</a>
+          <a href="#cilios">Cílios</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <span class="tag">✨ Salão de beleza em São Vicente</span>
+
+          <h1 class="hero-title">
+            Cuidar de você é <span>investimento</span>.
+          </h1>
+
+          <p class="hero-copy">
+            Bem-vinda à <strong>Divina Guarany</strong>. Um espaço pensado para valorizar sua autoestima com serviços de
+            <strong>cabelo, unhas, cílios, sobrancelhas e estética</strong>, unindo carinho, tecnologia e atendimento especial.
+          </p>
+
+          <ul class="hero-list">
+            <li>Especialidades em cabelo, unhas, cílios e tratamentos capilares</li>
+            <li>Atendimento em São Vicente - SP</li>
+            <li>Agendamento rápido pelo WhatsApp</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-wa" href="#" onclick="sendPresetMessage('Botão Hero', 'Quero agendar um horário na Divina Guarany.')">
+              Agendar agora
+            </a>
+            <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Botão Hero', 'Quero saber quais serviços de beleza vocês oferecem.')">
+              Ver serviços
+            </a>
+            <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.instagram.com/divinabelezaguarany/">
+              Instagram
+            </a>
+          </div>
+
+          <div class="quick-cards">
+            <div class="quick-card">
+              <div class="icon-bubble">💇</div>
+              <strong>Cabelo</strong>
+              <span>Loiros, lisos, hidratação, alisamentos e revitalização.</span>
+            </div>
+            <div class="quick-card">
+              <div class="icon-bubble">💅</div>
+              <strong>Unhas</strong>
+              <span>Acabamento delicado, profissional e impecável.</span>
+            </div>
+            <div class="quick-card">
+              <div class="icon-bubble">👁️</div>
+              <strong>Cílios</strong>
+              <span>Olhares realçados com técnica e charme.</span>
+            </div>
+            <div class="quick-card">
+              <div class="icon-bubble">✨</div>
+              <strong>Estética</strong>
+              <span>Tecnologia e bem-estar para elevar sua autoestima.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="hero-badge">
+              <span class="pulse"></span>
+              Agenda aberta
+            </div>
+
+            <div class="hero-service-grid">
+              <div class="mini-card">
+                <div class="mini-icon">💗</div>
+                <strong>Photon Laser</strong>
+                <span>Tecnologia para brilho, redução do frizz e fortalecimento dos fios.</span>
+              </div>
+              <div class="mini-card">
+                <div class="mini-icon">🌿</div>
+                <strong>Ozonioterapia</strong>
+                <span>Tratamento para couro cabeludo, força e crescimento saudável.</span>
+              </div>
+              <div class="mini-card">
+                <div class="mini-icon">💇</div>
+                <strong>Loiros & Lisos</strong>
+                <span>Especialistas em transformar autoestima com resultados impecáveis.</span>
+              </div>
+              <div class="mini-card">
+                <div class="mini-icon">💅</div>
+                <strong>Detalhes perfeitos</strong>
+                <span>Unhas, cílios e cuidado em cada atendimento.</span>
+              </div>
+            </div>
+
+            <div class="contact-glass">
+              <p><strong>Endereço:</strong> Rua Guarany, 38 - São Vicente</p>
+              <p><strong>Funcionamento:</strong> terça a sábado, das 10h00 às 20h00</p>
+              <p><strong>WhatsApp:</strong> (13) 98221-5515</p>
+              <p><strong>Instagram:</strong> @divinabelezaguarany</p>
+              <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Card Hero', 'Quero marcar meu horário na Divina Guarany.')">Quero agendar ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFISSIONAIS LOGO ABAIXO DA HERO -->
+    <section class="section" id="profissionais">
+      <div class="container">
+        <div class="pro-section-top">
+          <div class="pro-heading">
+            <span class="tag">Nossa equipe</span>
+            <h2 class="pro-title">Profissionais <span>recomendadas</span></h2>
+            <p class="pro-desc">
+              Conheça quem faz parte da experiência Divina Guarany. Arraste para o lado no celular para ver todas as profissionais.
+            </p>
+          </div>
+          <div class="slider-buttons">
+            <button class="slider-btn" onclick="moveSlider('sliderProfissionais', -1)">‹</button>
+            <button class="slider-btn" onclick="moveSlider('sliderProfissionais', 1)">›</button>
+          </div>
+        </div>
+
+        <div class="slider" id="sliderProfissionais">
+          <article class="pro-card">
+            <div class="pro-photo">
+              <img src="assets/profissional-caroline.jpg" alt="Profissional Caroline">
+              <span class="reco-badge">Profissional recomendada</span>
+            </div>
+            <div class="pro-body">
+              <span class="pro-role">Loiros & Lisos</span>
+              <h3>Caroline</h3>
+              <p>
+                Especialista em criar o loiro dos sonhos e referência em alisamentos de excelência. A Carol entrega muito mais do que técnica: ela entrega transformação de autoestima.
+              </p>
+              <div class="pro-actions">
+                <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Profissional Caroline', 'Quero agendar um atendimento com a profissional Caroline, especialista em loiros e lisos.')">Agendar com Caroline</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pro-card">
+            <div class="pro-photo">
+              <img src="assets/profissional-tatiane.jpg" alt="Profissional Tatiane">
+              <span class="reco-badge">Profissional recomendada</span>
+            </div>
+            <div class="pro-body">
+              <span class="pro-role">Manicure</span>
+              <h3>Tatiane</h3>
+              <p>
+                A nossa querida Tati une experiência, técnica, agilidade e acabamento impecável. Ideal para quem quer unhas lindas com um atendimento leve e profissional.
+              </p>
+              <div class="pro-actions">
+                <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Profissional Tatiane', 'Quero agendar um atendimento com a profissional Tatiane para unhas/manicure.')">Agendar com Tatiane</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pro-card">
+            <div class="pro-photo">
+              <img src="assets/profissional-nicolly.jpg" alt="Profissional Nicolly">
+              <span class="reco-badge">Profissional recomendada</span>
+            </div>
+            <div class="pro-body">
+              <span class="pro-role">Cabeleireira</span>
+              <h3>Nicolly</h3>
+              <p>
+                Ágil, atenciosa e com acabamentos excelentes, a Nicolly cuida dos cabelos com muito carinho e entrega resultados que fazem a cliente voltar.
+              </p>
+              <div class="pro-actions">
+                <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Profissional Nicolly', 'Quero agendar um atendimento com a profissional Nicolly para cabelo.')">Agendar com Nicolly</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pro-card">
+            <div class="pro-photo">
+              <img src="assets/profissional-nathaly.jpg" alt="Profissional Nathaly">
+              <span class="reco-badge">Profissional recomendada</span>
+            </div>
+            <div class="pro-body">
+              <span class="pro-role">Gestão & Lash Designer</span>
+              <h3>Nathaly</h3>
+              <p>
+                Responsável pelo salão e também Lash Designer. A Nathaly garante qualidade, atenção individualizada e um olhar especial em cada detalhe.
+              </p>
+              <div class="pro-actions">
+                <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Profissional Nathaly', 'Quero agendar um atendimento com a profissional Nathaly, gestão/lash designer.')">Agendar com Nathaly</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-top">
+          <span class="tag">Serviços</span>
+          <h2 class="section-title">Beleza, cuidado e <span>tecnologia</span></h2>
+          <p class="section-sub">
+            A Divina Guarany oferece uma experiência completa em beleza, reunindo técnica, acolhimento e tratamentos modernos para cuidar de você da raiz aos detalhes.
+          </p>
+        </div>
+
+        <div class="quick-cards">
+          <div class="quick-card">
+            <div class="icon-bubble">💇</div>
+            <strong>Cabelo</strong>
+            <span>Loiros, alisamentos, escovas, hidratação e revitalização dos fios.</span>
+            <a class="btn btn-soft" href="#" onclick="sendPresetMessage('Serviço Cabelo', 'Tenho interesse em serviços de cabelo.')">Quero cabelo</a>
+          </div>
+          <div class="quick-card">
+            <div class="icon-bubble">💅</div>
+            <strong>Unhas</strong>
+            <span>Delicadeza e acabamento bonito para realçar suas mãos.</span>
+            <a class="btn btn-soft" href="#" onclick="sendPresetMessage('Serviço Unhas', 'Tenho interesse em serviços de unhas/manicure.')">Quero unhas</a>
+          </div>
+          <div class="quick-card">
+            <div class="icon-bubble">👁️</div>
+            <strong>Cílios</strong>
+            <span>Mais charme e presença para o seu olhar.</span>
+            <a class="btn btn-soft" href="#" onclick="sendPresetMessage('Serviço Cílios', 'Tenho interesse em serviços de cílios/lash.')">Quero cílios</a>
+          </div>
+          <div class="quick-card">
+            <div class="icon-bubble">🌿</div>
+            <strong>Tratamentos</strong>
+            <span>Photon Laser e Ozonioterapia Capilar para elevar os resultados.</span>
+            <a class="btn btn-soft" href="#" onclick="sendPresetMessage('Serviço Tratamentos', 'Tenho interesse nos tratamentos capilares da Divina Guarany.')">Quero tratamento</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cabelo">
+      <div class="container">
+        <div class="gallery-block">
+          <div class="gallery-header">
+            <div>
+              <div class="tag">Galeria</div>
+              <h2 class="gallery-title">Trabalhos de <span>cabelo</span></h2>
+              <p class="gallery-note">Adicione aqui suas 8 fotos de cabelo. No celular, a cliente passa para o lado com o dedo.</p>
+            </div>
+            <div class="slider-buttons">
+              <button class="slider-btn" onclick="moveSlider('sliderCabelo', -1)">‹</button>
+              <button class="slider-btn" onclick="moveSlider('sliderCabelo', 1)">›</button>
+            </div>
+          </div>
+
+          <div class="gallery-slider cols-4" id="sliderCabelo">
+            <div class="slide"><img src="assets/cabelo-1.jpg" alt="Cabelo 1"><div class="slide-caption">Resultado de cabelo • Divina Guarany</div></div>
+            <div class="slide"><img src="assets/cabelo-2.jpg" alt="Cabelo 2"><div class="slide-caption">Transformação com brilho e cuidado</div></div>
+            <div class="slide"><img src="assets/cabelo-3.jpg" alt="Cabelo 3"><div class="slide-caption">Autoestima elevada em cada detalhe</div></div>
+            <div class="slide"><img src="assets/cabelo-4.jpg" alt="Cabelo 4"><div class="slide-caption">Cabelos mais bonitos e valorizados</div></div>
+            <div class="slide"><img src="assets/cabelo-5.jpg" alt="Cabelo 5"><div class="slide-caption">Loiros e lisos impecáveis</div></div>
+            <div class="slide"><img src="assets/cabelo-6.jpg" alt="Cabelo 6"><div class="slide-caption">Cuidado com saúde e beleza dos fios</div></div>
+            <div class="slide"><img src="assets/cabelo-7.jpg" alt="Cabelo 7"><div class="slide-caption">Finalização profissional</div></div>
+            <div class="slide"><img src="assets/cabelo-8.jpg" alt="Cabelo 8"><div class="slide-caption">Resultados que encantam</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="unhas">
+      <div class="container">
+        <div class="gallery-block">
+          <div class="gallery-header">
+            <div>
+              <div class="tag">Galeria</div>
+              <h2 class="gallery-title">Trabalhos de <span>unhas</span></h2>
+              <p class="gallery-note">Adicione aqui 2 fotos de unhas.</p>
+            </div>
+            <div class="slider-buttons">
+              <button class="slider-btn" onclick="moveSlider('sliderUnhas', -1)">‹</button>
+              <button class="slider-btn" onclick="moveSlider('sliderUnhas', 1)">›</button>
+            </div>
+          </div>
+
+          <div class="gallery-slider cols-3" id="sliderUnhas">
+            <div class="slide"><img src="assets/unhas-1.jpg" alt="Unhas 1"><div class="slide-caption">Unhas com acabamento impecável</div></div>
+            <div class="slide"><img src="assets/unhas-2.jpg" alt="Unhas 2"><div class="slide-caption">Delicadeza, técnica e cuidado</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cilios">
+      <div class="container">
+        <div class="gallery-block">
+          <div class="gallery-header">
+            <div>
+              <div class="tag">Galeria</div>
+              <h2 class="gallery-title">Trabalhos de <span>cílios</span></h2>
+              <p class="gallery-note">Adicione aqui 2 fotos de cílios.</p>
+            </div>
+            <div class="slider-buttons">
+              <button class="slider-btn" onclick="moveSlider('sliderCilios', -1)">‹</button>
+              <button class="slider-btn" onclick="moveSlider('sliderCilios', 1)">›</button>
+            </div>
+          </div>
+
+          <div class="gallery-slider cols-3" id="sliderCilios">
+            <div class="slide"><img src="assets/cilios-1.jpg" alt="Cílios 1"><div class="slide-caption">Olhar valorizado com elegância</div></div>
+            <div class="slide"><img src="assets/cilios-2.jpg" alt="Cílios 2"><div class="slide-caption">Cílios com charme e sofisticação</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tratamentos">
+      <div class="container">
+        <div class="section-top">
+          <span class="tag">Tecnologia capilar</span>
+          <h2 class="section-title">Tratamentos que vão <span>além do básico</span></h2>
+          <p class="section-sub">
+            Mostre aqui os 2 vídeos explicativos para passar autoridade e aumentar o valor percebido.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <video src="assets/video-photon.mp4" controls playsinline></video>
+            <div class="video-content">
+              <h3>Conheça o <span>Photon Laser</span></h3>
+              <p>
+                O Photon Laser ajuda na renovação dos fios, brilho, redução do frizz, aceleração de químicas e fortalecimento capilar, proporcionando resultados duradouros e mais saudáveis.
+              </p>
+              <ul class="bullet-list">
+                <li>Renova a fibra capilar e nutre os fios</li>
+                <li>Ajuda no crescimento e fortalecimento</li>
+                <li>Reduz frizz e aumenta o brilho</li>
+                <li>Potencializa resultados em alisamentos e tinturas</li>
+              </ul>
+              <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Tratamento Photon Laser', 'Quero saber mais sobre o procedimento Photon Laser.')">Quero Photon Laser</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <video src="assets/video-ozonio.mp4" controls playsinline></video>
+            <div class="video-content">
+              <h3>Ozonioterapia <span>Capilar</span></h3>
+              <p>
+                A Ozonioterapia Capilar atua no couro cabeludo, ajudando na oxigenação, microcirculação e saúde dos fios desde a raiz.
+              </p>
+              <ul class="bullet-list">
+                <li>Ajuda a reduzir a queda</li>
+                <li>Combate oleosidade excessiva</li>
+                <li>Melhora a saúde do couro cabeludo</li>
+                <li>Contribui para fios mais fortes e com mais vida</li>
+              </ul>
+              <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Tratamento Ozonioterapia', 'Quero saber mais sobre a Ozonioterapia Capilar.')">Quero Ozonioterapia</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Onde <span>estamos</span>?</h3>
+            <p>
+              Venha viver sua experiência de beleza na <strong>Divina Guarany</strong>.
+              Um espaço preparado para acolher você com cuidado, carinho e resultados lindos.
+            </p>
+            <ul class="info-list">
+              <li>Rua Guarany, 38 - São Vicente</li>
+              <li>De terça a sábado</li>
+              <li>Das 10h00 às 20h00</li>
+              <li>Agendamento pelo WhatsApp</li>
+            </ul>
+            <a class="btn btn-primary" href="#" onclick="sendPresetMessage('Botão Endereço', 'Quero agendar meu horário e saber como chegar até a Divina Guarany.')">Marque seu horário</a>
+          </div>
+
+          <div class="info-card">
+            <h3>Formas de <span>pagamento</span></h3>
+            <p>
+              Facilidades para você cuidar de si sem complicação.
+            </p>
+            <ul class="info-list">
+              <li>Dinheiro</li>
+              <li>Débito</li>
+              <li>Crédito em até 5x sem juros</li>
+              <li>Pix</li>
+            </ul>
+            <a class="btn btn-soft" href="#" onclick="sendPresetMessage('Botão Pagamento', 'Quero saber mais sobre as formas de pagamento da Divina Guarany.')">Perguntar pagamento</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box">
+          <h3>Quer agendar seu <span>horário?</span></h3>
+          <p>
+            Preencha o formulário abaixo e você será enviada diretamente para o WhatsApp da Divina Guarany com sua solicitação pronta.
+          </p>
+
+          <form class="form-grid" onsubmit="enviarWhatsApp(event)">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="tel" name="telefone" placeholder="Seu WhatsApp" required>
+
+            <select name="servico" required>
+              <option value="">Selecione o serviço</option>
+              <option>Cabelo</option>
+              <option>Unhas</option>
+              <option>Cílios</option>
+              <option>Sobrancelhas</option>
+              <option>Estética</option>
+              <option>Photon Laser</option>
+              <option>Ozonioterapia Capilar</option>
+            </select>
+
+            <input type="text" name="data" placeholder="Melhor dia/horário">
+
+            <textarea class="full" name="mensagem" placeholder="Escreva o que você deseja fazer. Ex: cabelo, unhas, cílios, photon laser, etc."></textarea>
+
+            <button class="btn btn-wa full" type="submit">Enviar para o WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-box">
+            <h4>Divina Guarany</h4>
+            <p>Beleza, cosméticos e cuidados pessoais em São Vicente.</p>
+            <p>Cabelo • Unhas • Cílios • Sobrancelhas • Estética</p>
+          </div>
+
+          <div class="footer-box">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="#topo">Início</a></li>
+              <li><a href="#profissionais">Profissionais</a></li>
+              <li><a href="#cabelo">Cabelo</a></li>
+              <li><a href="#unhas">Unhas</a></li>
+              <li><a href="#cilios">Cílios</a></li>
+              <li><a href="#tratamentos">Tratamentos</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-box">
+            <h4>Contato</h4>
+            <ul>
+              <li>Rua Guarany, 38 - São Vicente</li>
+              <li>WhatsApp: (13) 98221-5515</li>
+              <li>Instagram: @divinabelezaguarany</li>
+              <li>Terça a sábado • 10h00 às 20h00</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Copyright © 2026 Divina Guarany - Todos os direitos reservados</p>
+          <p>Site desenvolvido para captação de agendamentos</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="whatsapp-float" href="#" onclick="sendPresetMessage('Botão Flutuante WhatsApp', 'Quero agendar um horário na Divina Guarany.')" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16.02 3.2A12.68 12.68 0 0 0 5.09 22.3L3.2 28.8l6.68-1.76a12.62 12.62 0 0 0 6.12 1.56h.01A12.7 12.7 0 0 0 16.02 3.2Zm7.47 17.94c-.31.88-1.56 1.62-2.22 1.73-.57.09-1.3.13-2.1-.13-.48-.15-1.1-.35-1.89-.69-3.33-1.44-5.5-4.8-5.67-5.02-.17-.22-1.35-1.8-1.35-3.43 0-1.63.86-2.44 1.16-2.77.3-.33.66-.41.88-.41h.63c.2.01.48-.08.75.57.29.7.98 2.4 1.07 2.57.09.17.15.37.03.59-.11.22-.17.36-.34.56-.17.2-.36.45-.51.61-.17.17-.35.36-.15.71.2.35.88 1.45 1.89 2.35 1.3 1.16 2.39 1.52 2.74 1.69.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.78-.17.32.12 2.03.96 2.38 1.13.35.17.58.26.67.4.09.14.09.81-.22 1.69Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = "5513982215515";
+
+    function toggleMenu(){
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("open");
+    }
+
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        menu.classList.remove("open");
+      });
+    });
+
+    function moveSlider(id, dir){
+      const slider = document.getElementById(id);
+      if(!slider) return;
+      const amount = Math.min(slider.clientWidth * 0.85, 420);
+      slider.scrollBy({ left: amount * dir, behavior: "smooth" });
+    }
+
+    function sendPresetMessage(botao, interesse){
+      const texto =
+`Olá, vim pelo site da Divina Guarany.
+
+Botão clicado: ${botao}
+Interesse: ${interesse}`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`, "_blank");
+    }
+
+    function enviarWhatsApp(event){
+      event.preventDefault();
+
+      const form = event.target;
+      const nome = form.nome.value.trim();
+      const telefone = form.telefone.value.trim();
+      const servico = form.servico.value.trim();
+      const data = form.data.value.trim();
+      const mensagem = form.mensagem.value.trim();
+
+      const texto =
+`Olá, vim pelo site da Divina Guarany e quero agendar um horário.
+
+Nome: ${nome}
+WhatsApp: ${telefone}
+Serviço: ${servico}
+Melhor dia/horário: ${data}
+Mensagem: ${mensagem}
+Origem: Formulário do site`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`, "_blank");
+    }
+  </script>
+</body>
+</html>
