@@ -173,20 +173,51 @@
       cursor:pointer;
     }
 
-    /* HERO */
-    .hero{padding:34px 0 26px;position:relative;overflow:hidden}
+    /* HERO COM VÍDEO NO FUNDO */
+    .hero{
+      padding:80px 0 64px;
+      position:relative;
+      overflow:hidden;
+      min-height:calc(100vh - 78px);
+      display:flex;
+      align-items:center;
+      background:#241923;
+    }
+    .hero-video-bg{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+      background:#241923;
+    }
+    .hero-video-bg video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.52) saturate(1.12) contrast(1.04);
+    }
+    .hero-video-bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(36,25,35,.92), rgba(36,25,35,.60), rgba(255,95,162,.20)),
+        linear-gradient(180deg, rgba(255,248,251,.08), rgba(36,25,35,.76));
+      pointer-events:none;
+    }
     .hero::before{
       content:"";
       position:absolute;inset:0;
+      z-index:1;
       background-image:
-        linear-gradient(rgba(255,95,162,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,95,162,.045) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
       background-size:34px 34px;
       mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 92%);
       pointer-events:none;
     }
     .hero-grid{
-      position:relative;z-index:1;
+      position:relative;z-index:2;
       display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:center;
     }
     .hero-left{display:grid;gap:18px}
@@ -194,28 +225,32 @@
       font-family:"Playfair Display",serif;
       font-size:clamp(40px,7vw,72px);
       line-height:.92;letter-spacing:-1.5px;
-      color:var(--dark);
+      color:white;
+      text-shadow:0 16px 46px rgba(0,0,0,.32);
     }
     .hero-title span{
-      background:linear-gradient(135deg,var(--pink),#e75fa5,var(--gold));
+      background:linear-gradient(135deg,#fff,var(--pink2),var(--gold));
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
     .hero-copy{
-      font-size:16px;line-height:1.85;color:var(--muted);max-width:630px;
+      font-size:16px;line-height:1.85;color:rgba(255,255,255,.88);max-width:630px;
+      text-shadow:0 10px 32px rgba(0,0,0,.28);
     }
     .hero-list{display:grid;gap:10px}
     .hero-list li{
       list-style:none;display:flex;gap:10px;align-items:flex-start;
-      font-size:15px;font-weight:700;
+      font-size:15px;font-weight:800;color:rgba(255,255,255,.92);
+      text-shadow:0 10px 30px rgba(0,0,0,.22);
     }
     .hero-list li::before{
       content:"✓";
       width:22px;height:22px;flex:0 0 22px;
       border-radius:50%;
       display:flex;align-items:center;justify-content:center;
-      background:rgba(255,95,162,.12);
-      color:var(--pink);font-size:12px;font-weight:900;
+      background:rgba(255,255,255,.18);
+      color:#fff;font-size:12px;font-weight:900;
       margin-top:1px;
+      backdrop-filter:blur(8px);
     }
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 
@@ -223,12 +258,13 @@
       background:
         linear-gradient(160deg, rgba(255,255,255,.88), rgba(255,246,251,.92)),
         linear-gradient(135deg, rgba(255,95,162,.12), rgba(255,213,111,.12));
-      border:1px solid rgba(255,95,162,.10);
+      border:1px solid rgba(255,255,255,.38);
       box-shadow:var(--shadow);
       border-radius:30px;
       padding:22px;
       overflow:hidden;
       position:relative;
+      backdrop-filter:blur(14px);
     }
     .hero-card::before{
       content:"";
@@ -567,7 +603,7 @@
     }
 
     @media (max-width: 760px){
-      .hero{padding-top:20px}
+      .hero{padding-top:76px;min-height:auto}
       .hero-service-grid{grid-template-columns:1fr 1fr}
       .quick-cards{grid-template-columns:1fr 1fr}
       .slider{grid-auto-columns:88%}
@@ -593,6 +629,7 @@
   <!--
     COLOQUE ESTES ARQUIVOS NA PASTA assets
 
+    hero.mp4
     logo-divina.jpg
 
     cabelo-1.jpg
@@ -648,6 +685,12 @@
 
   <main id="topo">
     <section class="hero">
+      <div class="hero-video-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="container hero-grid">
         <div class="hero-left">
           <span class="tag">✨ Salão de beleza em São Vicente</span>
